@@ -1,0 +1,9 @@
+name: landing-page-automotive
+recipe: laravel
+config:
+  webroot: public
+  via: nginx
+services:
+  appserver:
+    xdebug: true
+    version: 3.3.1
