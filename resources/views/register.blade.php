@@ -80,6 +80,10 @@
                 <button type="submit">Registrarse</button>
             </div>
         </form>
+        <!-- Botón para volver a la página de inicio -->
+        <section class="registration">
+            <a href="{{ url('/') }}">Volver a la página de inicio</a>
+        </section>
     </div>
 </body>
 
