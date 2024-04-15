@@ -1,8 +1,9 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,8 @@ Route::get('/', [HomeController::class, 'showHome'])->name('home'); // Ruta para
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register.form');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
+
+
+Route::get('/admin/clients', [AdminController::class, 'showClients'])->name('clients.list');
+Route::get('/admin/export-clients', [AdminController::class, 'exportClients'])->name('clients.export');
+Route::post('/admin/select-winner', [AdminController::class, 'selectWinner'])->name('select.winner');
