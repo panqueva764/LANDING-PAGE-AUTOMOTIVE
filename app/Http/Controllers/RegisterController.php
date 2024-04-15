@@ -46,8 +46,9 @@ class RegisterController extends Controller
             $cliente->save();
 
             return redirect()->route('register.submit')->with('success', '¡Registro exitoso!');
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Error al registrar: ' . $e->getMessage());
+        } catch (QueryException $e) {
+            // Capturar la excepción y mostrar un mensaje de error
+            return redirect()->back()->withErrors(['error' => 'Hubo un problema al registrar el cliente. Por favor, inténtelo de nuevo más tarde.']);
         }
     }
 
